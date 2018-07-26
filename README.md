@@ -14,7 +14,7 @@ Only tested with ansible 2.5 min version
 
 Role Variables
 --------------
-- Copy content of [main.yml]()
+- Copy content of [main.yml](https://github.com/ptavares/ansible-role-manage-system/blob/master/defaults/main.yml)
 - Customize it as you like, following as below :
 ```yaml
 ---
