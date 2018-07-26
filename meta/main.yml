@@ -1,6 +1,6 @@
 galaxy_info:
   author: Patrick Tavares
-  description: Ansible role for managing system (update - install package - clean)
+  description: Ansible role for managing system (update - install/remove packages - clean)
   company: Personal
   license: MIT
   min_ansible_version: 2.5
