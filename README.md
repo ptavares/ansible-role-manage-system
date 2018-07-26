@@ -1,3 +1,7 @@
+[![Build Status](https://img.shields.io/travis/ptavares/ansible-role-manage-system/master.svg?style=flat-square)](https://travis-ci.org/ptavares/ansible-role-manage-system)
+[![Ansible Role](https://img.shields.io/ansible/role/27842.svg)](https://galaxy.ansible.com/ptavares/ansible-role-manage-system)
+[![License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://github.com/ptavares/ansible-role-manage-system/blob/master/LICENSE)
+
 ansible-role-mange-system
 =========
 
