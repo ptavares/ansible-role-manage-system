@@ -23,7 +23,7 @@
 # Specific DEB part
 - debug:
     msg: "Will install deb packages from bellow url(s) : {{ system_deb_urls }}"
-  when: system_deb_urls
+  when: system_deb_urls is defined
 
 - name: Install deb packages from url
   apt: deb={{ item }} force=yes
