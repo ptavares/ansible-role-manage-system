@@ -3,7 +3,7 @@
 # Section for system updates
 ##############################
 # Wether or not call update-system task
-system_update: false
+system_update: true
 # Whether or not only applies security updates
 system_update_security_only: false
 
@@ -50,4 +50,4 @@ system_deb_urls:
 # Section for system clean
 ##############################
 # Wether or not call clean-system task
-system_clean: false
+system_clean: true
