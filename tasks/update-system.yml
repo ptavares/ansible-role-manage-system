@@ -6,15 +6,11 @@
   become: true
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
-- name: Check if there are available updates
-  command: /usr/lib/update-notifier/apt-check --package-names
-  register: pkg_list_to_update
-
 - name: Update all packages to the latest version
   apt:
     upgrade: dist
   become: true
-  when: not system_update_security_only and pkg_list_to_update.stderr != "" and (ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu')
+  when: not system_update_security_only and (ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu')
 
 - name: Update security packages
   apt:
