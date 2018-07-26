@@ -26,7 +26,7 @@
   when: system_deb_urls
 
 - name: Install deb packages from url
-  apt: deb={{ item }}
+  apt: deb={{ item }} force=yes
   with_items:
     - "{{ system_deb_urls }}"
   become: true
@@ -38,7 +38,7 @@
   when: system_rpm_urls is defined
 
 - name: Install rpm packages from url
-  yum: name={{ item }} state=present
+  yum: name={{ item }} state=present validate_certs=no
   with_items:
     - "{{ system_rpm_urls }}"
   become: true
