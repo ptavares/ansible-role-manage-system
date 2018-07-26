@@ -14,7 +14,63 @@ Only tested with ansible 2.5 min version
 
 Role Variables
 --------------
+- Copy content of [main.yml]()
+- Customize it as you like, following as below :
+```yaml
+---
+###############################
+# Section for system updates
+##############################
+# Wether or not call update-system task
+system_update: false
+# Whether or not only applies security updates
+system_update_security_only: false
 
+###################################
+# Section for install/remove package
+####################################
+# -----------------------------------
+# Common to Debian/Ubuntu/Centos/RHEL
+# -----------------------------------
+# Packages to install
+system_packages_install:
+  - wget
+  - curl
+  - vim
+  - p7zip-full
+  - p7zip-rar
+  - dos2unix
+  - network-manager
+  - network-manager-openvpn
+  - jq
+  - python
+  - python-pip
+  - jmtpfs
+  - dar
+
+# Package to remove
+system_packages_remove:
+  - light-locker
+  - nano
+
+# ----------------------
+# Specific Debian/Ubuntu
+# ----------------------
+# system_deb_urls:
+#  - "https://prerelease.keybase.io/keybase_amd64.deb"
+
+# --------------------
+# Specific Centos/RHEL
+# --------------------
+# system_rpm_urls:
+#  - "https://prerelease.keybase.io/keybase_amd64.rpm"
+
+###############################
+# Section for system clean
+##############################
+# Wether or not call clean-system task
+system_clean: true
+```
 
 Dependencies
 ------------
