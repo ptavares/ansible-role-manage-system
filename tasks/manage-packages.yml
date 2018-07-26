@@ -1,0 +1,45 @@
+- debug:
+    msg: "Will install packages : {{ system_packages_install }}"
+  when: system_packages_install is defined
+
+- name: Install wanted packages
+  package: name={{ item }} state=present
+  with_items:
+    - "{{ system_packages_install }}"
+  become: true
+  when: system_packages_install is defined
+
+- debug:
+    msg: "Will remove packages : {{ system_packages_remove }}"
+  when: system_packages_remove is defined
+
+- name: Remove wanted packages
+  package: name={{ item }} state=absent
+  with_items:
+    - "{{ system_packages_remove }}"
+  become: true
+  when: system_packages_remove is defined
+
+# Specific DEB part
+- debug:
+    msg: "Will install deb packages from bellow url(s) : {{ system_deb_urls }}"
+  when: system_deb_urls
+
+- name: Install deb packages from url
+  apt: deb={{ item }}
+  with_items:
+    - "{{ system_deb_urls }}"
+  become: true
+  when: system_deb_urls is defined and ( ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu' )
+
+# Specific RPM part
+- debug:
+    msg: "Will install rpm packages from bellow url(s) : {{ system_rpm_urls }}"
+  when: system_rpm_urls is defined
+
+- name: Install rpm packages from url
+  yum: name={{ item }} state=present
+  with_items:
+    - "{{ system_rpm_urls }}"
+  become: true
+  when: system_rpm_urls is defined and ( ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat' )

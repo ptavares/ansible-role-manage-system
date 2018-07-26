@@ -1,0 +1,17 @@
+galaxy_info:
+  author: Patrick Tavares
+  description: Ansible role for managing system (update - install package - clean)
+  company: Personal
+  license: MIT
+  min_ansible_version: 2.5
+  platforms:
+    - name: Ubuntu
+      versions:
+        - all
+  galaxy_tags:
+    - system
+    - manage
+    - update
+    - install
+    - clean
+dependencies: []
