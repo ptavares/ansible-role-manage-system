@@ -54,14 +54,14 @@ system_packages_remove:
 # ----------------------
 # Specific Debian/Ubuntu
 # ----------------------
-# system_deb_urls:
-#  - "https://prerelease.keybase.io/keybase_amd64.deb"
+system_deb_urls:
+  - "https://prerelease.keybase.io/keybase_amd64.deb"
 
 # --------------------
 # Specific Centos/RHEL
 # --------------------
-# system_rpm_urls:
-#  - "https://prerelease.keybase.io/keybase_amd64.rpm"
+system_rpm_urls:
+  - "https://prerelease.keybase.io/keybase_amd64.rpm"
 ```
 ### Clean system
 
