@@ -32,7 +32,7 @@
     state: latest
     disablerepo: base, extras, updates
   become: true
-  when: not system_update_security_only ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat'
+  when: not system_update_security_only and (ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat')
 
 - name: Update security packages only
   yum:
@@ -41,4 +41,4 @@
     security: yes
     disablerepo: base, extras, updates
   become: true
-  when: system_update_security_only ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat'
+  when: system_update_security_only and (ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat')
