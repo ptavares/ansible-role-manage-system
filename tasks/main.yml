@@ -1,6 +1,6 @@
 ---
 # Update system
-- include: update-system.yml
+- include_tasks: update-system.yml
   when: system_update
   tags:
     - manage-system-update
@@ -9,7 +9,7 @@
   tags:
     - manage-system-package
 # Clean system (include old kernels)
-- include: clean-system.yml
+- include_tasks: clean-system.yml
   when: system_clean
   tags:
     - manage-system-clean
