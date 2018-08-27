@@ -2,14 +2,14 @@
 # Update system
 - include: update-system.yml
   when: system_update
-  tag:
-    - update
+  tags:
+    - manage-system-update
 # Manage package (install/remove)
 - include: manage-packages.yml
-  tag:
-    - package
+  tags:
+    - manage-system-package
 # Clean system (include old kernels)
 - include: clean-system.yml
   when: system_clean
-  tag:
-    - clean
+  tags:
+    - manage-system-clean
