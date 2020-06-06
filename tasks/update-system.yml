@@ -5,19 +5,24 @@
     update_cache: yes
     cache_valid_time: 3600
   become: true
-  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+  when: >
+    ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
 - name: Update all packages to the latest version
   apt:
     upgrade: dist
   become: true
-  when: not system_update_security_only and (ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu')
+  when: >
+    not system_update_security_only and
+    (ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu')
 
 - name: Update security packages
   apt:
     upgrade: safe
   become: true
-  when: system_update_security_only and (ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu')
+  when: >
+    system_update_security_only and
+    (ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu')
 
 
 # CentOS or RHEL
@@ -33,7 +38,9 @@
     state: latest
     disablerepo: base, extras, updates
   become: true
-  when: not system_update_security_only and (ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat')
+  when: >
+    not system_update_security_only and
+    (ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat')
 
 - name: Update security packages only
   yum:
@@ -42,4 +49,6 @@
     security: yes
     disablerepo: base, extras, updates
   become: true
-  when: system_update_security_only and (ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat')
+  when: >
+    system_update_security_only and
+    (ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat')

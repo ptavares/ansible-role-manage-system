@@ -1,3 +1,4 @@
+---
 - debug:
     msg: "Will install packages : {{ system_packages_install }}"
   when: system_packages_install is defined
@@ -30,7 +31,9 @@
   with_items:
     - "{{ system_deb_urls }}"
   become: true
-  when: system_deb_urls is defined and ( ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu' )
+  when: >
+    system_deb_urls is defined and
+    ( ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu' )
 
 # Specific RPM part
 - debug:
@@ -42,4 +45,6 @@
   with_items:
     - "{{ system_rpm_urls }}"
   become: true
-  when: system_rpm_urls is defined and ( ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat' )
+  when: >
+    system_rpm_urls is defined and
+    ( ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat' )
