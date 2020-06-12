@@ -1,5 +1,12 @@
 ---
 - hosts: localhost
   remote_user: root
+  vars:
+    system_update: true
+    system_packages_install:
+      - git
+    system_packages_remove:
+      - nano
+    system_clean: true
   roles:
     - ansible-role-manage-system
