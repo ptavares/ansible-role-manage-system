@@ -14,25 +14,25 @@ system_update_security_only: false
 # Common to Debian/Ubuntu/Centos/RHEL
 # -----------------------------------
 # Packages to install
-system_packages_install:
-  - wget
-  - curl
-  - vim
-  - p7zip-full
-  - p7zip-rar
-  - dos2unix
-  - network-manager
-  - network-manager-openvpn
-  - jq
-  - python
-  - python-pip
-  - jmtpfs
-  - dar
+#system_packages_install:
+#  - wget
+#  - curl
+#  - vim
+#  - p7zip-full
+#  - p7zip-rar
+#  - dos2unix
+#  - network-manager
+#  - network-manager-openvpn
+#  - jq
+#  - python
+#  - python-pip
+#  - jmtpfs
+#  - dar
 
 # Package to remove
-system_packages_remove:
-  - light-locker
-  - nano
+#system_packages_remove:
+#  - light-locker
+#  - nano
 
 # ----------------------
 # Specific Debian/Ubuntu
@@ -50,4 +50,4 @@ system_packages_remove:
 # Section for system clean
 ##############################
 # Wether or not call clean-system task
-system_clean: true
+system_clean: false
