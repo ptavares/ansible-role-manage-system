@@ -2,7 +2,7 @@
 - hosts: localhost
   remote_user: root
   vars:
-    system_update: true
+    system_update_security_only: true
     system_packages_install:
       - git
     system_packages_remove:
